@@ -14,6 +14,8 @@ It's relevant to media and digital arts because it's an interactive game that wi
   - Will add hitboxes to images so when the player touches them, it both increases the player score and the stardust disappears.
 - Feature 3: Asteroid kills player
   - Will add hitboxes to asteroid images so when the player touches them, it ends the game.
+- Feature 4: Asteroids and stardusts travel from screen right to left.
+  - Will randomly generate on y axis on the far right then decreases x value by scroll speed.
 
 ## Challenges
 - Need to learn how to code an endlessly scrolling background
