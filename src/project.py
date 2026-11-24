@@ -7,7 +7,10 @@ def main():
     screen = pygame.display.set_mode(display_size)
     running = True
     while running:
+        # event loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        # TODO: game logic
+        # render & display
     pygame.quit()
