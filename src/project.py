@@ -15,7 +15,7 @@ def main():
                 running = False
         # TODO: game logic
         # render & display
-        screen.fill('Blue')
+        screen.blit(bg, (0,0))
         pygame.display.flip()
     pygame.quit()
 
