@@ -13,4 +13,10 @@ def main():
                 running = False
         # TODO: game logic
         # render & display
+        screen.fill('Blue')
+        pygame.display.flip()
     pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
