@@ -24,6 +24,8 @@ def main():
 
 
 class Star(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        pygame.sprite.Sprite.__init__(self)
 
 if __name__ == "__main__":
     main()
