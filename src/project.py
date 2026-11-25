@@ -7,6 +7,7 @@ def main():
     pygame.display.set_caption("To Catch a Star")
     clock = pygame.time.Clock()
     dt = 0
+    asteroid_duration = 1500
     display_size = (800, 500)
     screen = pygame.display.set_mode(display_size)
     bg = pygame.image.load('ToCatchAStar_BG.png')
@@ -22,7 +23,7 @@ def main():
                 running = False
         
         time_elapsed = pygame.time.get_ticks()
-        if time_elapsed > 1500:
+        if time_elapsed > asteroid_duration:
             asteroid = Asteroid(800, random.randrange(0, 500, 120))
             asteroid_grp.add(asteroid)
             time_elapsed = 0
