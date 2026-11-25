@@ -67,6 +67,15 @@ class Star(pygame.sprite.Sprite):
             self.dy += player_speed
         if keys[pygame.K_UP]:
             self.dy -= player_speed
+
+
+class Stardust(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.image.load('ToCatchAStar_StarDust.png')
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
         
 
 class Asteroid(pygame.sprite.Sprite):
