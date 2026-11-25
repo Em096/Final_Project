@@ -12,6 +12,9 @@ def main():
     star_grp = pygame.sprite.Group()
     star = Star(100, 250)
     star_grp.add(star)
+    asteroid_grp = pygame.sprite.Group()
+    asteroid = Asteroid(300, 100)
+    asteroid_grp.add(asteroid)
     running = True
     while running:
         # event loop
