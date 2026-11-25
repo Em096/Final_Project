@@ -35,5 +35,16 @@ class Star(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= 4
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += 4
+        if keys[pygame.K_DOWN]:
+            self.rect.y += 4
+        if keys[pygame.K_UP]:
+            self.rect.y -= 4
+
 if __name__ == "__main__":
     main()
