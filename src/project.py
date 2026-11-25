@@ -82,12 +82,12 @@ class Asteroid(pygame.sprite.Sprite):
         self.ast_speed = 15
         self.rect.x -= self.ast_speed
 
-    def _births(self):
-        for count in range(1):
-            x = 800
-            y = random.randrange(0, 500, 120)
-            asteroids = Asteroid(x, y)
-            self.ast_grp.add(asteroids)
+    # def _births(self):
+    #     for count in range(1):
+    #         x = 800
+    #         y = random.randrange(0, 500, 120)
+    #         asteroids = Asteroid(x, y)
+    #         self.ast_grp.add(asteroids)
 
 
 if __name__ == "__main__":
