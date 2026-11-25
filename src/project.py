@@ -37,16 +37,18 @@ class Star(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
+        self.dx = 0
+        self.dy = 0
         player_speed = 10
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            self.rect.x -= player_speed
+            self.dx -= player_speed
         if keys[pygame.K_RIGHT]:
-            self.rect.x += player_speed
+            self.dx += player_speed
         if keys[pygame.K_DOWN]:
-            self.rect.y += player_speed
+            self.dy += player_speed
         if keys[pygame.K_UP]:
-            self.rect.y -= player_speed
+            self.dy -= player_speed
 
 if __name__ == "__main__":
     main()
