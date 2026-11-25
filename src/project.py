@@ -76,6 +76,15 @@ class Stardust(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
+    def update(self):
+        self.movement()
+        if self.rect.right < 0:
+            self.kill()
+            
+    def movement(self):
+        self.dust_speed = 15
+        self.rect.x -= self.dust_speed
         
 
 class Asteroid(pygame.sprite.Sprite):
