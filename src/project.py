@@ -27,7 +27,7 @@ def main():
             asteroid_grp.add(asteroid)
         # TODO: game logic
         star.update()
-        asteroid.update()
+        asteroid_grp.update()
         print(asteroid_grp)
         # render & display
         screen.blit(bg, (0,0))
