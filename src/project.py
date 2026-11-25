@@ -24,6 +24,7 @@ def main():
                 running = False
         # TODO: game logic
         star.update()
+        asteroid.update()
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
@@ -68,6 +69,13 @@ class Asteroid(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
+    def update(self):
+        self.movement()
+
+    def movement(self):
+        self.ast_speed = 5
+        self.rect.x -= self.ast_speed
 
 
 if __name__ == "__main__":
