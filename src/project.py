@@ -26,6 +26,7 @@ def main():
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
+        asteroid_grp.draw(screen)
         pygame.display.flip()
         dt = clock.tick(12)
     pygame.quit()
