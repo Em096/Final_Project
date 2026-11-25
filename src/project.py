@@ -9,6 +9,7 @@ def main():
     display_size = (800, 500)
     screen = pygame.display.set_mode(display_size)
     bg = pygame.image.load('ToCatchAStar_BG.png')
+    star_grp = pygame.sprite.Group()
     running = True
     while running:
         # event loop
