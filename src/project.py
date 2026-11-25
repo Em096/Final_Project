@@ -21,8 +21,11 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         for count in range(1):
-            asteroid = Asteroid(800, random.randrange(0, 500, 120))
-            asteroid_grp.add(asteroid)
+            time_elapsed = pygame.time.get_ticks()
+            if time_elapsed > 1500:
+                asteroid = Asteroid(800, random.randrange(0, 500, 120))
+                asteroid_grp.add(asteroid)
+                time_elapsed = 0
         # TODO: game logic
         star.update()
         asteroid_grp.update()
