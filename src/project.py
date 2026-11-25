@@ -19,6 +19,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         # TODO: game logic
+        star.update()
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
