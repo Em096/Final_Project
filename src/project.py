@@ -23,5 +23,7 @@ def main():
     pygame.quit()
 
 
+class Star(pygame.sprite.Sprite):
+
 if __name__ == "__main__":
     main()
