@@ -68,19 +68,27 @@ class Asteroid(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load('ToCatchAStar_Asteroid.png')
         self.rect = self.image.get_rect()
+        self.ast_grp = pygame.sprite.Group()
         self.rect.x = x
         self.rect.y = y
 
     def update(self):
         self.movement()
+        self._births()
         if self.rect.right < 0:
             self.kill()
         
-
     def movement(self):
         self.ast_speed = 15
         self.rect.x -= self.ast_speed
-        
+
+    def _births(self):
+        for count in range(1):
+            x = 800
+            y = random.randrange(0, 500, 120)
+            asteroids = Asteroid(x, y)
+            self.ast_grp.add(asteroids)
+
 
 if __name__ == "__main__":
     main()
