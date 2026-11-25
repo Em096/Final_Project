@@ -28,6 +28,7 @@ class Star(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load('ToCatchAStar_Star.png')
         self.rect = self.image.get_rect()
+        self.rect.center = (x, y)
 
 if __name__ == "__main__":
     main()
