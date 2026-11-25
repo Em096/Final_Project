@@ -20,7 +20,7 @@ def main():
     while running:
         # event loop
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT or pygame.sprite.groupcollide(star_grp, asteroid_grp, True, False):
                 running = False
         
         time_elapsed = pygame.time.get_ticks()
