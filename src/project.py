@@ -8,6 +8,7 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     asteroid_duration = 1500
+    time_since_last_ast = pygame.time.get_ticks()
     display_size = (800, 500)
     screen = pygame.display.set_mode(display_size)
     bg = pygame.image.load('ToCatchAStar_BG.png')
@@ -26,7 +27,7 @@ def main():
         if time_elapsed > asteroid_duration:
             asteroid = Asteroid(800, random.randrange(0, 500, 120))
             asteroid_grp.add(asteroid)
-            time_elapsed = 0
+            asteroid_duration = time_elapsed
         # TODO: game logic
         star.update()
         asteroid_grp.update()
