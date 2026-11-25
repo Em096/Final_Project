@@ -14,14 +14,17 @@ def main():
     star = Star(100, 250)
     star_grp.add(star)
     asteroid_grp = pygame.sprite.Group()
-    asteroid = Asteroid(300, 100)
-    asteroid_grp.add(asteroid)
+    # asteroid = Asteroid(300, 100)
+    # asteroid_grp.add(asteroid)
     running = True
     while running:
         # event loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        for count in range(1):
+            asteroid = Asteroid(800, random.randrange(0, 500, 120))
+            asteroid_grp.add(asteroid)
         # TODO: game logic
         star.update()
         asteroid.update()
@@ -74,7 +77,7 @@ class Asteroid(pygame.sprite.Sprite):
 
     def update(self):
         self.movement()
-        self._births()
+        # self._births()
         if self.rect.right < 0:
             self.kill()
         
