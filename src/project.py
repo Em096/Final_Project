@@ -96,10 +96,11 @@ class Stardust(pygame.sprite.Sprite):
 
 
 class Text():
-    def __init__(self, text, x, y, clr):
+    def __init__(self, text, x, y, clr, surface):
         self.font = pygame.font.Font('freesansbold.ttf', 40)
         self.clr = pygame.Color(clr)
         self.text = self.font.render(text, True, clr)
+        surface.blit(self.text, (x, y))
         
 
 class Asteroid(pygame.sprite.Sprite):
