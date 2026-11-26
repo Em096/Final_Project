@@ -9,7 +9,7 @@ def main():
     dt = 0
     asteroid_duration = 1500
     time_since_last_ast = pygame.time.get_ticks()
-    display_size = (800, 500)
+    display_size = (736, 500)
     screen = pygame.display.set_mode(display_size)
     bg = pygame.image.load('ToCatchAStar_BG.png')
     bg_scroll = pygame.image.load('ToCatchAStar_BG_Scroll.png')
@@ -32,8 +32,8 @@ def main():
             score +=1
         time_elapsed = pygame.time.get_ticks()
         if time_elapsed - time_since_last_ast > asteroid_duration:
-            asteroid = Asteroid(800, random.randrange(0, 500, 120))
-            stardust = Stardust(800, random.randrange(0, 500, 120))
+            asteroid = Asteroid(736, random.randrange(0, 500, 120))
+            stardust = Stardust(736, random.randrange(0, 500, 120))
             asteroid_grp.add(asteroid)
             stardust_grp.add(stardust)
             time_since_last_ast = time_elapsed
