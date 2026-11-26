@@ -23,7 +23,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT or pygame.sprite.groupcollide(star_grp, asteroid_grp, True, False):
                 running = False
-        
+        stardust_hit = pygame.sprite.groupcollide(star_grp, stardust_grp, False, True)
         time_elapsed = pygame.time.get_ticks()
         if time_elapsed - time_since_last_ast > asteroid_duration:
             asteroid = Asteroid(800, random.randrange(0, 500, 120))
