@@ -38,7 +38,6 @@ def main():
         star.update()
         asteroid_grp.update()
         stardust_grp.update()
-        print(score)
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
