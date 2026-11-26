@@ -20,7 +20,7 @@ def main():
     asteroid_grp = pygame.sprite.Group()
     score = 0
     scroll_start = 0
-    scroll_speed = 15
+    scroll_speed = 8
     running = True
     while running:
         # event loop
