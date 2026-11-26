@@ -44,6 +44,7 @@ def main():
         star_grp.draw(screen)
         stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
+        Text(f"SCORE: {score}", 10, 10, screen)
         pygame.display.flip()
         dt = clock.tick(12)
     pygame.quit()
