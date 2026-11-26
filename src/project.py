@@ -19,6 +19,8 @@ def main():
     stardust_grp = pygame.sprite.Group()
     asteroid_grp = pygame.sprite.Group()
     score = 0
+    scroll_start = 0
+    scroll_speed = 15
     running = True
     while running:
         # event loop
@@ -41,7 +43,8 @@ def main():
         stardust_grp.update()
         # render & display
         screen.blit(bg, (0,0))
-        screen.blit(bg_scroll, (0,0))
+        screen.blit(bg_scroll, (scroll_start,0))
+        scroll_start -= scroll_speed
         star_grp.draw(screen)
         stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
