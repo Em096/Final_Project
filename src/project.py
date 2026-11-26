@@ -11,8 +11,8 @@ def main():
     time_since_last_ast = pygame.time.get_ticks()
     display_size = (736, 500)
     screen = pygame.display.set_mode(display_size)
-    bg = pygame.image.load('ToCatchAStar_BG.png')
-    bg_scroll = pygame.image.load('ToCatchAStar_BG_Scroll.png')
+    bg_img = pygame.image.load('ToCatchAStar_BG.png')
+    bg_scroll_img = pygame.image.load('ToCatchAStar_BG_Scroll.png')
     star_grp = pygame.sprite.Group()
     star = Star(100, 250)
     star_grp.add(star)
@@ -23,7 +23,6 @@ def main():
     scroll_speed = 8
     running = True
     while running:
-        # event loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT or pygame.sprite.groupcollide(star_grp, asteroid_grp, True, False):
                 running = False
@@ -37,16 +36,14 @@ def main():
             asteroid_grp.add(asteroid)
             stardust_grp.add(stardust)
             time_since_last_ast = time_elapsed
-        # TODO: game logic
-        star.update()
-        asteroid_grp.update()
-        stardust_grp.update()
-        # render & display
-        screen.blit(bg, (0,0))
-        screen.blit(bg_scroll, (scroll_start,0))
         scroll_start -= scroll_speed
         if abs(scroll_start) >= 184:
             scroll_start = 0
+        star.update()
+        asteroid_grp.update()
+        stardust_grp.update()
+        screen.blit(bg_img, (0,0))
+        screen.blit(bg_scroll_img, (scroll_start,0))
         star_grp.draw(screen)
         stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
@@ -65,11 +62,11 @@ class Star(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
-        self.movement()
+        self._movement()
         self.rect.x += self.dx
         self.rect.y += self.dy
 
-    def movement(self):
+    def _movement(self):
         self.dx = 0
         self.dy = 0
         player_speed = 10
@@ -93,11 +90,11 @@ class Stardust(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
-        self.movement()
+        self._movement()
         if self.rect.right < 0:
             self.kill()
             
-    def movement(self):
+    def _movement(self):
         self.dust_speed = 12
         self.rect.x -= self.dust_speed
 
@@ -120,11 +117,11 @@ class Asteroid(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
-        self.movement()
+        self._movement()
         if self.rect.right < 0:
             self.kill()
         
-    def movement(self):
+    def _movement(self):
         self.ast_speed = 15
         self.rect.x -= self.ast_speed
 
