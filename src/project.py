@@ -12,6 +12,7 @@ def main():
     display_size = (800, 500)
     screen = pygame.display.set_mode(display_size)
     bg = pygame.image.load('ToCatchAStar_BG.png')
+    bg_scroll = pygame.image.load('ToCatchAStar_BG_Scroll.png')
     star_grp = pygame.sprite.Group()
     star = Star(100, 250)
     star_grp.add(star)
@@ -40,6 +41,7 @@ def main():
         stardust_grp.update()
         # render & display
         screen.blit(bg, (0,0))
+        screen.blit(bg_scroll, (0,0))
         star_grp.draw(screen)
         stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
