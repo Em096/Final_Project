@@ -45,6 +45,8 @@ def main():
         screen.blit(bg, (0,0))
         screen.blit(bg_scroll, (scroll_start,0))
         scroll_start -= scroll_speed
+        if abs(scroll_start) >= 184:
+            scroll_start = 0
         star_grp.draw(screen)
         stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
