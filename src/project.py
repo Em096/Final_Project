@@ -27,15 +27,19 @@ def main():
         time_elapsed = pygame.time.get_ticks()
         if time_elapsed - time_since_last_ast > asteroid_duration:
             asteroid = Asteroid(800, random.randrange(0, 500, 120))
+            stardust = Stardust(800, random.randrange(0, 500, 120))
             asteroid_grp.add(asteroid)
+            stardust_grp.add(stardust)
             time_since_last_ast = time_elapsed
         # TODO: game logic
         star.update()
         asteroid_grp.update()
+        stardust_grp.update()
         print(asteroid_grp)
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
+        stardust_grp.draw(screen)
         asteroid_grp.draw(screen)
         pygame.display.flip()
         dt = clock.tick(12)
