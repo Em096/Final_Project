@@ -17,6 +17,7 @@ def main():
     star_grp.add(star)
     stardust_grp = pygame.sprite.Group()
     asteroid_grp = pygame.sprite.Group()
+    score = 0
     running = True
     while running:
         # event loop
@@ -24,6 +25,8 @@ def main():
             if event.type == pygame.QUIT or pygame.sprite.groupcollide(star_grp, asteroid_grp, True, False):
                 running = False
         stardust_hit = pygame.sprite.groupcollide(star_grp, stardust_grp, False, True)
+        for stardust in stardust_hit:
+            score +=1
         time_elapsed = pygame.time.get_ticks()
         if time_elapsed - time_since_last_ast > asteroid_duration:
             asteroid = Asteroid(800, random.randrange(0, 500, 120))
@@ -35,6 +38,7 @@ def main():
         star.update()
         asteroid_grp.update()
         stardust_grp.update()
+        print(score)
         # render & display
         screen.blit(bg, (0,0))
         star_grp.draw(screen)
