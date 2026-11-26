@@ -98,7 +98,7 @@ class Stardust(pygame.sprite.Sprite):
             self.kill()
             
     def movement(self):
-        self.dust_speed = 15
+        self.dust_speed = 12
         self.rect.x -= self.dust_speed
 
 
