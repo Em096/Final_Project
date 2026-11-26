@@ -6,7 +6,7 @@ def main():
     pygame.init()
     pygame.display.set_caption("To Catch a Star")
     clock = pygame.time.Clock()
-    dt = 0
+    fps = 12
     asteroid_duration = 1500
     time_since_last_ast = pygame.time.get_ticks()
     display_size = (736, 500)
@@ -52,7 +52,7 @@ def main():
         asteroid_grp.draw(screen)
         Text(f"SCORE: {score}", 10, 10, screen)
         pygame.display.flip()
-        dt = clock.tick(12)
+        clock.tick(fps)
     pygame.quit()
 
 
