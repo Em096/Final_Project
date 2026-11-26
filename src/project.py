@@ -93,7 +93,10 @@ class Stardust(pygame.sprite.Sprite):
     def movement(self):
         self.dust_speed = 15
         self.rect.x -= self.dust_speed
-        
+
+
+class Text():
+    def __init__(self, text, x, y, clr):
 
 class Asteroid(pygame.sprite.Sprite):
     def __init__(self, x, y):
